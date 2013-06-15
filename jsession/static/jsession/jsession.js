@@ -5,7 +5,7 @@ $(function() {
     JSESSION.init = {
         loggedInCookie : 'jsession',
         parseAuthCookie : function() {
-            var cookies = $.cookie(Scrunch.social.loggedInCookie)
+            var cookies = $.cookie(JSESSION.init.loggedInCookie)
             if(cookies) {
                 var x = '';
                 if(cookies.charAt(0) == '"' && cookies.charAt(cookies.length-1) == '"') {
@@ -19,4 +19,6 @@ $(function() {
                 return json
             }
             return false;
-        },
+        }
+    }
+});

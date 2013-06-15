@@ -3,6 +3,7 @@ import json, base64, time
 from django.utils.cache import patch_vary_headers
 from django.utils.http import cookie_date
 
+
 class JSessionStore(object):
     def __init__(self, data):
         if data:
@@ -39,6 +40,7 @@ class JSessionStore(object):
         self.data = {}
         self.modified = True
 
+
 class JSessionMiddleware(object):
     def process_request(self, request):
         data = request.COOKIES.get("jsession", None)
@@ -61,6 +63,6 @@ class JSessionMiddleware(object):
                                     request.jsession.dumps(), max_age=max_age,
                                     expires=expires, domain=settings.SESSION_COOKIE_DOMAIN,
                                     path=settings.SESSION_COOKIE_PATH,
-                                    secure=settings.SESSION_COOKIE_SECURE or None,
-                                    httponly=settings.SESSION_COOKIE_HTTPONLY or None)
+                                    secure=None,
+                                    httponly=False)
         return response
