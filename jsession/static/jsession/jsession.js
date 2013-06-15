@@ -1,6 +1,6 @@
 $(function() {
 	var JSESSION = {};
-	window.Scrunch = Scrunch;
+	window.JSESSION = JSESSION;
 
     JSESSION.init = {
         loggedInCookie : 'jsession',

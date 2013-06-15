@@ -1,4 +1,6 @@
 *.log
 *.pot
 *.pyc
+/build
 local_settings.py
+/dist
