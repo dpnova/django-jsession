@@ -50,8 +50,8 @@ def fooview(request):
 Now from javascript you can access the contents of the cookie like this:
 
 ```javascript
-data = JSESSION.init.parseCookie();
-console.log(data['user_fullname']);
+data = JSESSION.get("user_fullname");
+console.log(data);
 ```
 
 Warning
