@@ -2,6 +2,9 @@ django-jsession
 ===============
 
 JSession is a simple way to pass data from serer to browser via cookies without messing around with extra ajax calls etc.
+This is most useful for indicating to javascript whether the user is signed in or not. Obviously you would remember to clear
+this cookie on logout. It can also be used to populate fields that may need to be updated by javascript after the page load,
+which is handy if your html is heavily cached.
 
 Installation
 ---------------
