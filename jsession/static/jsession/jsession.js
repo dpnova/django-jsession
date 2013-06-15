@@ -3,9 +3,9 @@ $(function() {
 	window.JSESSION = JSESSION;
 
     JSESSION.init = {
-        loggedInCookie : 'jsession',
-        parseAuthCookie : function() {
-            var cookies = $.cookie(JSESSION.init.loggedInCookie)
+        jsessionCookie : 'jsession',
+        parseCookie : function() {
+            var cookies = $.cookie(JSESSION.init.jsessionCookie)
             if(cookies) {
                 var x = '';
                 if(cookies.charAt(0) == '"' && cookies.charAt(cookies.length-1) == '"') {
@@ -15,7 +15,6 @@ $(function() {
                     x = $.base64Decode(cookies);
                 }
                 var json = $.parseJSON(x);
-                $.log(json);
                 return json
             }
             return false;
